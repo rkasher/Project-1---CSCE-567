@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="description" content="">
-    <title>Gapminder Clone</title>
+    <title>Project 1</title>
     <!-- Bootstrap -->
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <!-- Custom styling -->
@@ -13,7 +13,6 @@
 <body>
     <nav class="navbar navbar-default">
         <div class="container">
-            <a class="navbar-brand" href="#"><img id="logo" src="img/logo.png"></a>      
         </div>
     </nav>
 
@@ -29,7 +28,9 @@
 <script src="js/bootstrap.min.js"></script>
 <script src="js/d3.min.js"></script>
 <!-- Custom JS -->
-<script src="js/step0.js"></script>
+<script src="js/test.js"></script>
+<!-- load the d3.js library -->    	
+<script src="https://d3js.org/d3.v5.min.js"></script>
 
 </body>
 </html>

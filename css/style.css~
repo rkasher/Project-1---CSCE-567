@@ -12,3 +12,12 @@
 	height: 60px;
 	padding: 5px 0px;
 }
+.line {
+  fill: none;
+  stroke: steelblue;
+  stroke-width: 2px;
+}
+
+.area {
+  fill: lightsteelblue;
+}

@@ -28,7 +28,7 @@ var xScale = d3.scaleLinear()
     .domain([1,26])
     .range([0, width]);
 var yScale = d3.scaleLinear()
-    .domain([0,35])
+    .domain([0,36])
     .range([height, 0]);
 
 // Labels

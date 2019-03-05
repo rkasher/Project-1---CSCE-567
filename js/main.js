@@ -8,7 +8,7 @@
 //reading in data
 
 var margin = { left:80, right:20, top:50, bottom:100 };
-var height = 500 - margin.top - margin.bottom, 
+var height = 550 - margin.top - margin.bottom, 
     width = 800 - margin.left - margin.right;
 
 //scale for filling colors
@@ -19,6 +19,7 @@ var svg = d3.select("#chart-area")
     .append("svg")
         .attr("width", width + margin.left + margin.right)
         .attr("height", height + margin.top + margin.bottom)
+	.attr("y", 200)
     .append("g")
         .attr("transform", "translate(" + margin.left + 
             ", " + margin.top + ")");
@@ -37,14 +38,14 @@ var xLabel = svg.append("text")
     .attr("x", width / 2)
     .attr("font-size", "20px")
     .attr("text-anchor", "middle")
-    .text("Game");
+    .text("Games");
 var yLabel = svg.append("text")
     .attr("transform", "rotate(-90)")
     .attr("y", -40)
     .attr("x", -170)
     .attr("font-size", "20px")
     .attr("text-anchor", "middle")
-    .text("points");
+    .text("Points Per Game");
 
 // X Axis
 var xAxisCall = d3.axisBottom(xScale);
@@ -116,6 +117,8 @@ var kotsar = [];
 var silva = [];
 var team = [];
 
+
+
 data.map(function(d){
 	campbell.push(+d.campbell);
 	lawson.push(+d.lawson);
@@ -125,12 +128,12 @@ data.map(function(d){
 	team.push(d.team);
 });
 
-svg.append("text")
+/*svg.append("text")
         .attr("x", (width / 2))             
         .attr("y", 0 - (margin.top / 2))
         .attr("text-anchor", "middle")  
         .style("font-size", "20px")   
-        .text("South Carolina Basketball Starting 5");
+        .text("South Carolina Basketball Starting 5");*/
 
 
 // add the area

@@ -5,10 +5,11 @@
 * Main js
 */
 
-//reading in data
 
-var margin = { left:80, right:20, top:50, bottom:100 };
-var height = 550 - margin.top - margin.bottom, 
+
+//margins
+var margin = { left:80, right:20, top:20, bottom:100 };
+var height = 520 - margin.top - margin.bottom, 
     width = 800 - margin.left - margin.right;
 
 //scale for filling colors
@@ -23,6 +24,7 @@ var svg = d3.select("#chart-area")
     .append("g")
         .attr("transform", "translate(" + margin.left + 
             ", " + margin.top + ")");
+
 
 // Scales
 var xScale = d3.scaleLinear()
@@ -64,8 +66,6 @@ svg.append("g")
 var areaLawson = d3.area()
     .curve(d3.curveMonotoneX)
     .x(function(d) { 
-	    console.log(d.game);
-	    console.log(xScale(d.game));
 	    return xScale(d.game); })
     .y1(function(d) { return yScale(d.lawson); })
     .y0(height);
@@ -73,8 +73,6 @@ var areaLawson = d3.area()
 var areaSilva = d3.area()
     .curve(d3.curveMonotoneX)
     .x(function(d) { 
-	    console.log(d.game);
-	    console.log(xScale(d.game));
 	    return xScale(d.game); })
     .y1(function(d) { return yScale(d.silva); })
     .y0(height);
@@ -82,8 +80,6 @@ var areaSilva = d3.area()
 var areaGravett = d3.area()
     .curve(d3.curveMonotoneX)
     .x(function(d) { 
-	    console.log(d.game);
-	    console.log(xScale(d.game));
 	    return xScale(d.game); })
     .y1(function(d) { return yScale(d.gravett); })
     .y0(height);
@@ -91,8 +87,6 @@ var areaGravett = d3.area()
 var areaCampbell = d3.area()
     .curve(d3.curveMonotoneX)
     .x(function(d) { 
-	    console.log(d.game);
-	    console.log(xScale(d.game));
 	    return xScale(d.game); })
     .y1(function(d) { return yScale(d.campbell); })
     .y0(height);
@@ -128,46 +122,97 @@ data.map(function(d){
 	team.push(d.team);
 });
 
-/*svg.append("text")
-        .attr("x", (width / 2))             
-        .attr("y", 0 - (margin.top / 2))
-        .attr("text-anchor", "middle")  
-        .style("font-size", "20px")   
-        .text("South Carolina Basketball Starting 5");*/
 
-
-// add the area
+// add the areas	
 svg.append("path")
        .data([data])
-       .attr("class", "area")
-       .attr("d", areaLawson)
-       .attr("fill", "blue");
-
-svg.append("path")
-       .data([data])
-       .attr("class", "area")
+       .attr("class", "Sarea")
        .attr("d", areaSilva)
-       .attr("fill", "red");
+       .attr("fill", "#ED3027")
+       .on("mouseout", function(d){
+	    d3.select(".Garea").attr("opacity", 100);
+	    d3.select(".Carea").attr("opacity", 100);
+	    d3.select(".Karea").attr("opacity", 100);
+	    d3.select(".Larea").attr("opacity", 100);
+       })
+       .on("mouseover", function(d){
+	    d3.select(".Garea").attr("opacity", 0);
+	    d3.select(".Carea").attr("opacity", 0);
+	    d3.select(".Karea").attr("opacity", 0);
+	    d3.select(".Larea").attr("opacity", 0);
+       });
 
 svg.append("path")
        .data([data])
-       .attr("class", "area")
+       .attr("class", "Larea")
+       .attr("d", areaLawson)
+       .attr("fill", "#656566")
+       .on("mouseout", function(d){
+	    d3.select(".Garea").attr("opacity", 100);
+	    d3.select(".Sarea").attr("opacity", 100);
+	    d3.select(".Karea").attr("opacity", 100);
+	    d3.select(".Carea").attr("opacity", 100);
+       })
+       .on("mouseover", function(d){
+	    d3.select(".Garea").attr("opacity", 0);
+	    d3.select(".Sarea").attr("opacity", 0);
+	    d3.select(".Karea").attr("opacity", 0);
+	    d3.select(".Carea").attr("opacity", 0);
+       });
+
+svg.append("path")
+       .data([data])
+       .attr("class", "Garea")
        .attr("d", areaGravett)
-       .attr("fill", "green");
+       .attr("fill", "#A70800")
+       .on("mouseout", function(d){
+	    d3.select(".Carea").attr("opacity", 100);
+	    d3.select(".Sarea").attr("opacity", 100);
+	    d3.select(".Karea").attr("opacity", 100);
+	    d3.select(".Larea").attr("opacity", 100);
+       })
+       .on("mouseover", function(d){
+	    d3.select(".Carea").attr("opacity", 0);
+	    d3.select(".Sarea").attr("opacity", 0);
+	    d3.select(".Karea").attr("opacity", 0);
+	    d3.select(".Larea").attr("opacity", 0);
+       });
 
 svg.append("path")
        .data([data])
-       .attr("class", "area")
+       .attr("class", "Karea")
        .attr("d", areaKotsar)
-       .attr("fill", "purple");
+       .attr("fill", "#000000")
+       .on("mouseout", function(d){
+	    d3.select(".Garea").attr("opacity", 100);
+	    d3.select(".Sarea").attr("opacity", 100);
+	    d3.select(".Carea").attr("opacity", 100);
+	    d3.select(".Larea").attr("opacity", 100);
+       })
+       .on("mouseover", function(d){
+	    d3.select(".Garea").attr("opacity", 0);
+	    d3.select(".Sarea").attr("opacity", 0);
+	    d3.select(".Carea").attr("opacity", 0);
+	    d3.select(".Larea").attr("opacity", 0);
+       });
 
 svg.append("path")
        .data([data])
-       .attr("class", "area")
+       .attr("class", "Carea")
        .attr("d", areaCampbell)
-       .attr("fill", "yellow");
-
-
+       .attr("fill", "#560400")
+       .on("mouseout", function(d){
+	    d3.select(".Garea").attr("opacity", 100);
+	    d3.select(".Sarea").attr("opacity", 100);
+	    d3.select(".Karea").attr("opacity", 100);
+	    d3.select(".Larea").attr("opacity", 100);
+       })
+       .on("mouseover", function(d){
+	    d3.select(".Garea").attr("opacity", 0);
+	    d3.select(".Sarea").attr("opacity", 0);
+	    d3.select(".Karea").attr("opacity", 0);
+	    d3.select(".Larea").attr("opacity", 0);
+       });
 
 
 });

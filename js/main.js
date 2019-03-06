@@ -8,8 +8,8 @@
 
 
 //margins
-var margin = { left:80, right:20, top:20, bottom:100 };
-var height = 520 - margin.top - margin.bottom, 
+var margin = { left:80, right:20, top:-30, bottom:100 };
+var height = 470 - margin.top - margin.bottom, 
     width = 800 - margin.left - margin.right;
 
 //scale for filling colors
@@ -134,12 +134,18 @@ svg.append("path")
 	    d3.select(".Carea").attr("opacity", 100);
 	    d3.select(".Karea").attr("opacity", 100);
 	    d3.select(".Larea").attr("opacity", 100);
+	    d3.select("#points").attr("value", "73.3");
+	    d3.select("#rebounds").attr("value", "36.3");
+	    d3.select("#assists").attr("value", "12.9");
        })
        .on("mouseover", function(d){
 	    d3.select(".Garea").attr("opacity", 0);
 	    d3.select(".Carea").attr("opacity", 0);
 	    d3.select(".Karea").attr("opacity", 0);
 	    d3.select(".Larea").attr("opacity", 0);
+	    d3.select("#points").attr("value", "14.0");
+	    d3.select("#rebounds").attr("value", "7.0");
+	    d3.select("#assists").attr("value", "1.0");
        });
 
 svg.append("path")
@@ -152,12 +158,18 @@ svg.append("path")
 	    d3.select(".Sarea").attr("opacity", 100);
 	    d3.select(".Karea").attr("opacity", 100);
 	    d3.select(".Carea").attr("opacity", 100);
+	    d3.select("#points").attr("value", "73.3");
+	    d3.select("#rebounds").attr("value", "36.3");
+	    d3.select("#assists").attr("value", "12.9");
        })
        .on("mouseover", function(d){
 	    d3.select(".Garea").attr("opacity", 0);
 	    d3.select(".Sarea").attr("opacity", 0);
 	    d3.select(".Karea").attr("opacity", 0);
 	    d3.select(".Carea").attr("opacity", 0);
+	    d3.select("#points").attr("value", "14.2");
+	    d3.select("#rebounds").attr("value", "4.6");
+	    d3.select("#assists").attr("value", "3.0");
        });
 
 svg.append("path")
@@ -170,12 +182,18 @@ svg.append("path")
 	    d3.select(".Sarea").attr("opacity", 100);
 	    d3.select(".Karea").attr("opacity", 100);
 	    d3.select(".Larea").attr("opacity", 100);
+	    d3.select("#points").attr("value", "73.3");
+	    d3.select("#rebounds").attr("value", "36.3");
+	    d3.select("#assists").attr("value", "12.9");
        })
        .on("mouseover", function(d){
 	    d3.select(".Carea").attr("opacity", 0);
 	    d3.select(".Sarea").attr("opacity", 0);
 	    d3.select(".Karea").attr("opacity", 0);
 	    d3.select(".Larea").attr("opacity", 0);
+	    d3.select("#points").attr("value", "11.3");
+	    d3.select("#rebounds").attr("value", "3.7");
+	    d3.select("#assists").attr("value", "2.3");
        });
 
 svg.append("path")
@@ -188,12 +206,18 @@ svg.append("path")
 	    d3.select(".Sarea").attr("opacity", 100);
 	    d3.select(".Carea").attr("opacity", 100);
 	    d3.select(".Larea").attr("opacity", 100);
+	    d3.select("#points").attr("value", "73.3");
+	    d3.select("#rebounds").attr("value", "36.3");
+	    d3.select("#assists").attr("value", "12.9");
        })
        .on("mouseover", function(d){
 	    d3.select(".Garea").attr("opacity", 0);
 	    d3.select(".Sarea").attr("opacity", 0);
 	    d3.select(".Carea").attr("opacity", 0);
 	    d3.select(".Larea").attr("opacity", 0);
+	    d3.select("#points").attr("value", "6.9");
+	    d3.select("#rebounds").attr("value", "4.3");
+	    d3.select("#assists").attr("value", "1.0");
        });
 
 svg.append("path")
@@ -206,12 +230,18 @@ svg.append("path")
 	    d3.select(".Sarea").attr("opacity", 100);
 	    d3.select(".Karea").attr("opacity", 100);
 	    d3.select(".Larea").attr("opacity", 100);
+	    d3.select("#points").attr("value", "73.3");
+	    d3.select("#rebounds").attr("value", "36.3");
+	    d3.select("#assists").attr("value", "12.9");
        })
        .on("mouseover", function(d){
 	    d3.select(".Garea").attr("opacity", 0);
 	    d3.select(".Sarea").attr("opacity", 0);
 	    d3.select(".Karea").attr("opacity", 0);
 	    d3.select(".Larea").attr("opacity", 0);
+	    d3.select("#points").attr("value", "7.1");
+	    d3.select("#rebounds").attr("value", "1.8");
+	    d3.select("#assists").attr("value", "2.5");
        });
 
 

@@ -26,11 +26,21 @@
     </nav>
 
     <!-- Bootstrap grid setup -->
-    <div class="container">
-        <div class="row">
-            <div id="chart-area"></div>  
+    <div class="container" style="display:inline">
+        <div class="row" style="display:inline">
+            <div id="chart-area" style="display:inline"></div>
         </div>
     </div>
+    <form>
+	        <br>
+ 		Points Per Game:<br>
+		<input type="text" id="points" value="73.3"><br>
+		Rebounds Per Game:<br>
+		<input type="text" id="rebounds" value="36.3"><br>
+		Assists Per Game:<br>
+		<input type="text" id="assists" value="12.9">
+    </form>
+
 
 
 <style type='text/css'>
@@ -60,6 +70,13 @@
     height: 15px;
     width: 70px;
     }
+  form {
+	display: inline;
+	align: right;
+	position: absolute;
+	top: 80px;
+	left: 1100px;
+  }
 </style>
 
 <!-- External JS libraries -->
